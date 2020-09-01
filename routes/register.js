@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 router.post('/signup', (req, res) => {
   createUser(req.body);
-  return res.redirect('/login');
+  return res.redirect('/auth/login');
 })
 
 createUser = function(info) {

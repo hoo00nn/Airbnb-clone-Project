@@ -15,15 +15,18 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/loginCheck', (req, res) => {
-  findUser(req.body)
-  .then(data => {
-    if (data.length !== 0) {
-      let hash = encrypt();
-      res.cookie('SID', hash);
-      setSID(hash, req.body);
-    }
-    return res.redirect('/auth/login');
-  });
+  if (req.body.login) {
+    findUser(req.body)
+    .then(data => {
+      if (data.length !== 0) {
+        let hash = encrypt();
+        res.cookie('SID', hash);
+        setSID(hash, req.body);
+      }
+      return res.redirect('/auth/login');
+    });
+  }
+  else return res.redirect('/register');
 });
 
 router.post('/logout', (req, res) => {
