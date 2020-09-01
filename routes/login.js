@@ -6,14 +6,13 @@ const {userDB} = require('../public/database/db');
 
 router.get('/', (req, res) => {
   res.render(path.join(__dirname, '../views/login.pug'));
-})
+});
 
 router.post('/form', (req, res) => {
   console.log(req.body);
 
   findUser(req.body)
   .then(data => {
-    console.log(data);
     if (data.length !== 0) return res.json({result : "true"});
     return res.json({result : "false"});
   });
