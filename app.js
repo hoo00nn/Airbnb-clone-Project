@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3000;
 const users = require('./routes/users');
 const login = require('./routes/login');
+const register = require('./routes/register');
 
 app.set('view engine', 'pug');
 app.use(express.json());
@@ -22,3 +23,4 @@ app.get('/', (req, res) => {
 
 app.use('/users', users);
 app.use('/login', login);
+app.use('/register', register);
