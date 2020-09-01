@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3000;
 const users = require('./routes/users');
-const login = require('./routes/login');
+const auth = require('./routes/auth');
 const register = require('./routes/register');
 
 app.set('view engine', 'pug');
@@ -18,9 +18,9 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.redirect('/auth/login');
 })
 
 app.use('/users', users);
-app.use('/login', login);
+app.use('/auth', auth);
 app.use('/register', register);

@@ -7,10 +7,10 @@ html(lang="en")
   body
     if id
       h1 #{id}님 안녕하세요
-      form.logout__form(action="/login/logout", method="POST")
+      form.logout__form(action="/auth/logout", method="POST")
         button(type="submit") 로그아웃
     else
-      form.login__form(action="/login/loginCheck", method="POST")
+      form.login__form(action="/auth/loginCheck", method="POST")
         input(type="text", name="id", placeholder="아이디")
         input(type="text", name="pw", placeholder="비밀번호")
         button(type="submit") 로그인
