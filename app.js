@@ -18,7 +18,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.redirect('/auth/login');
+  res.render('index');
 })
 
 app.use('/users', users);
