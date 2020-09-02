@@ -1,0 +1,90 @@
+.footer {
+  background-color: #F7F7F7;
+  border-top: 1px solid #DDDDDD;
+}
+
+.footer__wrap {
+  padding: 0 80px;
+}
+
+.footer__top {
+  display: flex;
+  padding: 48px 0;
+}
+
+.footer__top > section {
+  flex: 1 0 0;
+}
+
+.footer__top h4.title {
+  font-size: 12px;
+  color: #222222;
+}
+
+.footer__top > section > ul > li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #222222;
+}
+
+.footer__bottom {
+  padding: 24px 0;
+  border-top: 1px solid #DDDDDD;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer__bottom__left > span {
+  font-size: 14px;
+}
+
+.footer__bottom__left .item {
+  display: inline-block;
+  width: 19px;
+  text-align: center;
+}
+
+.footer__bottom__right {
+  display: flex;
+  font-size: 14px;
+}
+
+.bottom__right__option .option__language {
+  margin-right: 24px;
+  position: relative;
+  text-decoration: underline;
+}
+
+.bottom__right__option .option__language > img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    left: -20px;
+}
+
+.bottom__right__option .option__money span:nth-child(1){
+  margin-right: 8px;
+}
+
+.bottom__right__option .option__money span:nth-child(2){
+  margin-right: 8px;
+  text-decoration: underline;
+}
+
+.footer__bottom__right .bottom__right__icon {
+  display: flex;
+  margin-left: 70px;
+}
+
+.footer__bottom__right .bottom__right__icon > span {
+  position: relative;
+  width: 18px;
+  margin: 0 10px;
+}
+
+.footer__bottom__right .bottom__right__icon > span > img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+}

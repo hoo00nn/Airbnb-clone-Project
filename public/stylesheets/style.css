@@ -1,8 +1,9 @@
 @import "./login.css";
 @import "./header.css";
+@import "./footer.css";
 
 body {
-  padding: 80px;
+  padding: 0px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
 }
@@ -10,4 +11,10 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
