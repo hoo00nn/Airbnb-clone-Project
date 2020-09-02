@@ -1,0 +1,36 @@
+.header
+  .header__left
+    a.left__anchor(href="/")
+      img.left__logo(src="/images/Airbnb_Logo.svg", alt="Airbnb logo image")
+  .header__middle
+    a(href="#")
+      span 숙소
+    a(href="#")
+      span 체험
+    a(href="#")
+      span 온라인 체험
+  .header__right
+    .header__right__wrap
+      .wrap__left
+        span 호스트 되기
+      .wrap__middle
+        img(src="/images/earth.png", alt="earth image")
+      .wrap__right
+        div
+          button.header__right__button.dropdown.closed
+            .header__button__left
+              img(src="/images/hambuger_menu.svg")
+            .header__button__right
+              img(src="/images/guest.png")
+          .header__right__dropdown__menu.menu
+            ul
+              a(href="/register")
+                li 회원 가입
+              a(href="/auth/login")
+                li 로그인
+              a(href="#")
+                li 숙소 호스트 되기
+              a(href="#")
+                li 체험 호스팅 하기
+              a(href="#")
+                li 도움말
