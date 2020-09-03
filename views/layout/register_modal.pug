@@ -5,16 +5,16 @@ div.register__modal
     span
       span 또는
   div.register__modal__content
-    form(action="", method="POST")
+    form(action="/register/signup", method="POST")
       div.content__register__info
         div
-          input(type="text", placeholder="이메일 주소")
+          input(type="email", placeholder="이메일 주소", name='email', required, , pattern="[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$")
         div
-          input(type="text", placeholder="이름(예: 길동)")
+          input(type="text", placeholder="이름(예: 길동)", required, name='lastName', pattern="^[가-힣]{1,2}$")
         div
-          input(type="text", placeholder="성(예: 홍)")
+          input(type="text", placeholder="성(예: 홍)", required, name='firstName', pattern="^[가-힣]{1,2}$")
         div
-          input(type="password", placeholder="비밀번호 설정하기")
+          input(type="password", placeholder="비밀번호 설정하기", required, name='password', pattern="^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$")
         div
           span 생일
         div
@@ -23,15 +23,15 @@ div.register__modal
           select(name="month")
             option(value="") 월
             -for(var i = 1; i < 13; i++)
-              option(value=`${i}월`) #{i}월
+              option(value=`${i}`) #{i}월
           select(name="day")
             option(value="") 일
             -for(var i = 1; i < 32; i++)
-              option(value=`${i}일`) #{i}일
+              option(value=`${i}`) #{i}일
           select(name="year")
             option(value="") 년
-            -for(var i = 1900; i < 2021; i++)
-              option(value=`${i}년`) #{i}년
+            -for(var i = 2020; i > 1899; i--)
+              option(value=`${i}`) #{i}년
         div
           span 에어비앤비의 회원 전용 할인, 추천 여행 정보, 프로모션 및 정책 변경사항을 이메일로 보내드립니다. 계정 관리의 환경설정 또는 프로모션 알림에서 언제든지 메시지 수신을 거부할 수 있습니다.
         div.content__agree
