@@ -6,18 +6,14 @@ const bcrypt = require('bcrypt');
 const saltRounds = 5;
 const {userDB, sessionDB} = require('../public/database/db');
 
-router.get('/', (req, res) => {
-  return res.render(path.join(__dirname, '../views/register.pug'));
-})
-
-router.post('/signup', async (req, res) => {
+router.post('/', async (req, res) => {
   const emailValidation = await emailCheck(req.body.email);
   
   if (emailValidation) {
     const hash = await bcryptPassword(req.body.password);
     req.body.password = hash;
     createUser(req.body);
-    return res.json({result : 'true'});
+    return res.redirect('/');
   }
   else return res.json({result : 'false'});
 })

@@ -21,17 +21,17 @@ router.post('/loginCheck', async (req, res) => {
       session.setSID(SID, req.body);
     }
 
-    return res.json({result: 'true'});
+    return res.redirect('/');
   }
   else {
-    return res.json({result : 'false'});
+    return res.redirect('/');
   }
 });
 
 router.get('/logout', (req, res) => {
   session.removeSession(req.cookies.SID);
   res.clearCookie('SID');
-  return res.json({result : 'true'});
+  return res.redirect('/');
 });
 
 const getPassword = (email) => {

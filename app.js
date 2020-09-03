@@ -9,6 +9,9 @@ const port = process.env.PORT || 3000;
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const register = require('./routes/register');
+const Session = require('./model/session');
+const { type } = require('os');
+let session = new Session();
 
 app.set('view engine', 'pug');
 // use 함수는 모든 요청에 대응
@@ -19,15 +22,25 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(async (req, res, next) => {
+  if (req.cookies.hasOwnProperty('SID')) {
+    const isSession = await session.sessionCheck(req.cookies.SID);
+
+    if (isSession) req.login = true;
+    else req.login = false;
+  }
+  else req.login = false;
+
+  next();
+});
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}...`);
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
-  // res.redirect('/auth/login');
-})
+  res.render('index', {login : req.login});
+});
 
 app.use('/users', users);
 app.use('/auth', auth);
