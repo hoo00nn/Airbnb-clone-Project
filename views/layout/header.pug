@@ -26,14 +26,14 @@
             ul
               li.modal__open.header__register 회원 가입
                 .modal.hidden
-                    .modal__overlay
-                    .modal__content
-                        include register_modal.pug
+                  .modal__overlay
+                  .modal__content
+                      include register_modal.pug
               li.modal__open.header__login 로그인
                 .modal.hidden
                   .modal__overlay
                   .modal__content
-                      h1 I'm modal
+                      include login_modal.pug
               li 숙소 호스트 되기
                 a(href="#")
               li 체험 호스팅 하기
