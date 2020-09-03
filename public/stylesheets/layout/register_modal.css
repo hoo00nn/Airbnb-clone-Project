@@ -1,0 +1,127 @@
+.register__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__modal__title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.register__modal > div:nth-of-type(2) {
+  text-align: center;
+  font-size: 14px;
+  color: #484848;
+  margin: 12px;
+}
+
+.register__modal > div:nth-of-type(3) {
+  margin: 12px;
+}
+
+.register__modal > div:nth-of-type(3) > span {
+  padding: 16px;
+}
+
+.register__modal > div:nth-of-type(3) > span::before {
+  border-bottom: 1px solid #484848;
+  content: "";
+}
+
+.register__modal > div:nth-of-type(3) > span::after {
+  content: '';
+  border-bottom: 1px solid #484848;
+}
+
+.register__modal > div:nth-of-type(3) > span > span {
+  font-size: 14px;
+  color: rgb(118, 118, 118);
+}
+
+.register__modal .register__modal__footer {
+  text-align: left;
+  font-size: 16px;
+  color: #484848;
+  padding: 16px 16px 0 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.register__modal .register__modal__footer > a {
+  margin-left: 8px;
+  color: #008489;
+}
+
+.register__modal__content .content__register__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.register__modal__content .content__register__info > div {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.register__modal__content .content__register__info > div > input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+}
+
+.register__modal__content .content__register__info > div:nth-of-type(6),
+.register__modal__content .content__register__info > div:nth-of-type(8),
+.register__modal__content .content__register__info > div:nth-of-type(9) {
+  text-align: left;
+  font-size: 14px;
+  color: #484848;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.register__modal__content .content__register__info > div:nth-of-type(5) {
+  text-align: left;
+  color: #484848;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.register__modal__content .content__register__info button {
+  width: 100%;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  background: rgb(255, 90, 95);
+  border-color: transparent;
+}
+
+.register__modal__content .content__birthday {
+  display: flex;
+}
+
+.register__modal__content .content__birthday > select {
+  flex: 1 0 0;
+  width: 100%;
+  padding: 11px 40px 11px 11px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+}
+
+.register__modal__content .content__birthday > select:nth-of-type(1) {
+  margin-right: 8px;
+}
+
+.register__modal__content .content__birthday > select:nth-of-type(2) {
+  margin-right: 8px;
+}

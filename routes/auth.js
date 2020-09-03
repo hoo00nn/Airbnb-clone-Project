@@ -3,67 +3,60 @@ const app = express();
 const router = express.Router();
 const path = require('path');
 const {userDB, sessionDB} = require('../public/database/db');
+const bcrypt = require('bcrypt');
+const Session = require('../model/session');
+let session = new Session();
 
-router.get('/login', (req, res) => {
-  sessionCheck(req.cookies)
-  .then(data => {
-    if (data.length !== 0) {
-      return res.render(path.join(__dirname, '../views/login.pug'), {id : data[0].id});
+router.post('/loginCheck', async (req, res) => {
+  const correctEmail = await checkEmail(req.body.email);
+  
+  if (correctEmail) {
+    const hashPassword = await getPassword(req.body.email);
+    const correctPassword = await checkPassword(req.body.password, hashPassword);
+
+    if (correctPassword) {
+      const SID = session.encrypt();
+
+      res.cookie('SID', SID);
+      session.setSID(SID, req.body);
     }
-    return res.render(path.join(__dirname, '../views/login.pug',));
-  });
-});
 
-router.post('/loginCheck', (req, res) => {
-  if (req.body.login) {
-    findUser(req.body)
-    .then(data => {
-      if (data.length !== 0) {
-        let hash = encrypt();
-        res.cookie('SID', hash);
-        setSID(hash, req.body);
-      }
-      return res.redirect('/auth/login');
-    });
+    return res.redirect('/');
   }
-  else return res.redirect('/register');
+  else {
+    return res.redirect('/');
+  }
 });
 
-router.post('/logout', (req, res) => {
-  removeSession(req.cookies.SID);
+router.get('/logout', (req, res) => {
+  session.removeSession(req.cookies.SID);
   res.clearCookie('SID');
-  return res.redirect('/auth/login');
+  return res.redirect('/');
 });
 
-const findUser = function(info) {
-  return new Promise((resolve, reject) => {
-    userDB.find({id : info.id, pw : info.pw}, (err, docs) => {
-      if (err) resolve(false);
-      resolve(docs);
+const getPassword = (email) => {
+  return new Promise(resolve => {
+    userDB.find({email}, (err, result) => {
+      resolve(result[0].password);
     });
   })
 }
 
-const sessionCheck = function(cookie) {
-  return new Promise((resolve, reject) => {
-    sessionDB.find({SID : cookie.SID}, (err, docs) => {
-      if (err) resolve(false);
-      resolve(docs);
+const checkPassword = (password, hash) => {
+  return new Promise(resolve => {
+    bcrypt.compare(password, hash, (err, isMatch) => {
+      resolve(isMatch);
     })
   })
 }
 
-const setSID = function(hash, info) {
-  sessionDB.insert({SID : hash, id : info.id});
-}
-
-const removeSession = function(SID) {
-  sessionDB.remove({SID : SID}, {}, (err, removed) => {});
-}
-
-const encrypt = function() {
-  const CHAR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  return Array(50).join().split(',').map(function() { return CHAR.charAt(Math.floor(Math.random() * CHAR.length));}).join('');
+const checkEmail = (email) => {
+  return new Promise(resolve => {
+    userDB.find({email}, (err, result) => {
+      if (result.length > 0) resolve(true)
+      else resolve(false)
+    })
+  })
 }
 
 module.exports = router;
