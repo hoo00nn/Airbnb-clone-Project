@@ -14,11 +14,11 @@ class Session {
     sessionDB.insert({SID : hash, email : info.email});
   }
 
-  sessionCheck = (cookie) => {
+  sessionCheck = (SID) => {
     return new Promise((resolve, reject) => {
-      sessionDB.find({SID : cookie.SID}, (err, docs) => {
-        if (err) resolve(false);
-        resolve(docs);
+      sessionDB.find({SID : SID}, (err, isMatch) => {
+        if (isMatch.length > 0) resolve(true);
+        else resolve(false);
       })
     })
   }
