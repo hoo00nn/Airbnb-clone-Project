@@ -24,13 +24,19 @@
               img(src="/images/guest.png")
           .header__right__dropdown__menu.menu
             ul
-              a(href="/register")
-                li 회원 가입
-              a(href="/auth/login")
-                li 로그인
-              a(href="#")
-                li 숙소 호스트 되기
-              a(href="#")
-                li 체험 호스팅 하기
-              a(href="#")
-                li 도움말
+              li.modal__open.header__register 회원 가입
+                .modal.hidden
+                    .modal__overlay
+                    .modal__content
+                        include register_modal.pug
+              li.modal__open.header__login 로그인
+                .modal.hidden
+                  .modal__overlay
+                  .modal__content
+                      h1 I'm modal
+              li 숙소 호스트 되기
+                a(href="#")
+              li 체험 호스팅 하기
+                a(href="#")
+              li 도움말
+                a(href="#")
