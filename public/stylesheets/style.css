@@ -3,6 +3,7 @@
 @import "./layout/footer.css";
 @import "./util/modal.css";
 @import "./layout/register_modal.css";
+@import "./layout/login_modal.css";
 
 body {
   padding: 0px;
