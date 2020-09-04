@@ -1,6 +1,69 @@
 # javascript-w1-airbnb
 스프린트 1주차 웹 프로젝트 - airbnb
 
+## client directory structure
+
+```
+📦client
+ ┣ 📂public
+ ┃ ┣ 📂images
+ ┃ ┃ ┣ 📜Airbnb_Logo.svg
+ ┃ ┃ ┣ 📜earth.png
+ ┃ ┃ ┣ 📜facebook.png
+ ┃ ┃ ┣ 📜facebook_white.png
+ ┃ ┃ ┣ 📜google.svg
+ ┃ ┃ ┣ 📜guest.png
+ ┃ ┃ ┣ 📜hambuger_menu.svg
+ ┃ ┃ ┣ 📜insta.png
+ ┃ ┃ ┣ 📜naver_blog.png
+ ┃ ┃ ┗ 📜twitter.png
+ ┃ ┣ 📂javascripts
+ ┃ ┃ ┣ 📂layout
+ ┃ ┃ ┃ ┗ 📜header.js
+ ┃ ┃ ┗ 📂util
+ ┃ ┃ ┃ ┣ 📜dropdown.js
+ ┃ ┃ ┃ ┗ 📜modal.js
+ ┃ ┗ 📂stylesheets
+ ┃ ┃ ┣ 📂layout
+ ┃ ┃ ┃ ┣ 📜footer.css
+ ┃ ┃ ┃ ┣ 📜header.css
+ ┃ ┃ ┃ ┣ 📜login_modal.css
+ ┃ ┃ ┃ ┗ 📜register_modal.css
+ ┃ ┃ ┣ 📂util
+ ┃ ┃ ┃ ┗ 📜modal.css
+ ┃ ┃ ┣ 📜login.css
+ ┃ ┃ ┗ 📜style.css
+ ┗ 📂views
+ ┃ ┣ 📂layout
+ ┃ ┃ ┣ 📜footer.pug
+ ┃ ┃ ┣ 📜header.pug
+ ┃ ┃ ┣ 📜layout.pug
+ ┃ ┃ ┣ 📜login_modal.pug
+ ┃ ┃ ┗ 📜register_modal.pug
+ ┃ ┣ 📜error.pug
+ ┃ ┗ 📜index.pug
+```
+
+## server directory structure
+
+```
+📦server
+ ┣ 📂bin
+ ┃ ┗ 📜www
+ ┣ 📂database
+ ┃ ┗ 📜db_connection.js
+ ┣ 📂middlewares
+ ┃ ┗ 📜session.js
+ ┣ 📂model
+ ┃ ┗ 📜session.js
+ ┣ 📂routes
+ ┃ ┣ 📜auth.js
+ ┃ ┣ 📜register.js
+ ┃ ┗ 📜users.js
+ ┣ 📜app.js
+ ┗ 📜env.js
+```
+
 ## Commit Convention
 - feat : 새로운 기능 추가
 - fix : 버그 수정
