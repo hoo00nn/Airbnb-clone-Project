@@ -1,4 +1,4 @@
 node_modules
-./public/database/sessionDB
-./public/database/userDB
+public/database/sessionDB
+public/database/userDB
 
