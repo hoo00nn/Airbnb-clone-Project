@@ -8,13 +8,12 @@ const Session = require('../model/session');
 let session = new Session();
 
 router.post('/loginCheck', async (req, res) => {
-  console.log(req.body);
   const correctEmail = await checkEmail(req.body.email);
   
   if (correctEmail) {
     const hashPassword = await getPassword(req.body.email);
     const correctPassword = await checkPassword(req.body.password, hashPassword);
-
+    console.log(correctPassword);
     if (correctPassword) {
       const SID = session.encrypt();
 
