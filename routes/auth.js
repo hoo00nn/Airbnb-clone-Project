@@ -9,6 +9,7 @@ let session = new Session();
 
 router.post('/loginCheck', async (req, res) => {
   const correctEmail = await checkEmail(req.body.email);
+  console.log(userDB);
   console.log(`email : ${req.body.email}`);
   console.log(`correctEmail : ${correctEmail}`);
   if (correctEmail) {
