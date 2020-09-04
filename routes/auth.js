@@ -8,6 +8,7 @@ const Session = require('../model/session');
 let session = new Session();
 
 router.post('/loginCheck', async (req, res) => {
+  console.log(req.body);
   const correctEmail = await checkEmail(req.body.email);
   
   if (correctEmail) {
