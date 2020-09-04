@@ -23,29 +23,29 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(async (req, res, next) => {
-  // if (req.cookies.hasOwnProperty('SID')) {
-  //   const isSession = await session.sessionCheck(req.cookies.SID);
-
-  //   if (isSession) req.login = true;
-  //   else req.login = false;
-  // }
-  // else req.login = false;
-
-  // next();
-
   if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
-    session.sessionCheck(req.cookies.SID)
-    .then(data => {
-      const isSession = data;
+    const isSession = await session.sessionCheck(req.cookies.SID);
 
-      if (isSession) req.login = true;
-      else req.login = false;
-    })
-    .catch(() => req.login = false)
+    if (isSession) req.login = true;
+    else req.login = false;
   }
   else req.login = false;
 
   next();
+
+  // if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
+  //   session.sessionCheck(req.cookies.SID)
+  //   .then(data => {
+  //     const isSession = data;
+
+  //     if (isSession) req.login = true;
+  //     else req.login = false;
+  //   })
+  //   .catch(() => req.login = false)
+  // }
+  // else req.login = false;
+
+  // next();
 });
 
 app.listen(port, () => {
