@@ -9,7 +9,7 @@ let session = new Session();
 
 router.post('/loginCheck', async (req, res) => {
   const correctEmail = await checkEmail(req.body.email);
-  
+  console.log(`correctEmail : ${correctEmail}`);
   if (correctEmail) {
     const hashPassword = await getPassword(req.body.email);
     const correctPassword = await checkPassword(req.body.password, hashPassword);
