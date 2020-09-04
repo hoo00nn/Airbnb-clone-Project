@@ -40,7 +40,6 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
   res.render('index', {login : req.login});
-  // res.render('index');
 });
 
 app.use('/users', users);
