@@ -23,7 +23,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(async (req, res, next) => {
-  if (req.cookies.hasOwnProperty('SID')) {
+  if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
     const isSession = await session.sessionCheck(req.cookies.SID);
 
     if (isSession) req.login = true;
