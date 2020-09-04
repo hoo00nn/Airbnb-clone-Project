@@ -1,4 +1,4 @@
-const {sessionDB} = require('../database/db');
+const {sessionDB} = require('../database/db_connection');
 
 class Session {
   encrypt = () => {
