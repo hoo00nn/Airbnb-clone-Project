@@ -9,13 +9,11 @@ let session = new Session();
 
 router.post('/loginCheck', async (req, res) => {
   const correctEmail = await checkEmail(req.body.email);
-  console.log(userDB);
-  console.log(`email : ${req.body.email}`);
-  console.log(`correctEmail : ${correctEmail}`);
+  
   if (correctEmail) {
     const hashPassword = await getPassword(req.body.email);
     const correctPassword = await checkPassword(req.body.password, hashPassword);
-    console.log(correctPassword);
+    
     if (correctPassword) {
       const SID = session.encrypt();
 
@@ -55,7 +53,6 @@ const checkPassword = (password, hash) => {
 const checkEmail = (email) => {
   return new Promise(resolve => {
     userDB.find({email : email}, (err, result) => {
-      console.log(`result : ${result}`);
       if (result.length > 0) resolve(true)
       else resolve(false)
     })
