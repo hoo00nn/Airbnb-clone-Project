@@ -148,7 +148,8 @@
   border-top: 1px solid #eeeeee;
 }
 
-.login__modal .login__modal__footer > a {
+.login__modal .login__modal__footer > span#register {
   margin-left: 8px;
   color: #008489;
+  cursor: pointer;
 }
