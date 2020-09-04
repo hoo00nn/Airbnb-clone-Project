@@ -8,8 +8,7 @@ const {port} = require('./env');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const register = require('./routes/register');
-const Session = require('./model/session');
-let session = new Session();
+const { checkSession } = require('./middlewares/session');
 
 app.set('views', path.join(__dirname, '../client/views'));
 app.set('view engine', 'pug');
@@ -21,17 +20,7 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static(path.join(__dirname, '../client/public')));
-app.use(async (req, res, next) => {
-  if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
-    const isSession = await session.sessionCheck(req.cookies.SID);
-
-    if (isSession) req.login = true;
-    else req.login = false;
-  }
-  else req.login = false;
-
-  next();
-});
+app.use(checkSession);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}...`);
