@@ -33,7 +33,7 @@ app.use(async (req, res, next) => {
 
   // next();
 
-  if (req.cookies.hasOwnProperty('SID')) {
+  if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
     session.sessionCheck(req.cookies.SID)
     .then(data => {
       const isSession = data;
