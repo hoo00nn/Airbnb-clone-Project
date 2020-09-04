@@ -22,39 +22,25 @@ app.use(cookieParser());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(async (req, res, next) => {
-  if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
-    const isSession = await session.sessionCheck(req.cookies.SID);
+// app.use(async (req, res, next) => {
+//   if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
+//     const isSession = await session.sessionCheck(req.cookies.SID);
 
-    if (isSession) req.login = true;
-    else req.login = false;
-  }
-  else req.login = false;
+//     if (isSession) req.login = true;
+//     else req.login = false;
+//   }
+//   else req.login = false;
 
-  next();
-
-  // if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
-  //   session.sessionCheck(req.cookies.SID)
-  //   .then(data => {
-  //     const isSession = data;
-
-  //     if (isSession) req.login = true;
-  //     else req.login = false;
-  //   })
-  //   .catch(() => req.login = false)
-  // }
-  // else req.login = false;
-
-  // next();
-});
+//   next();
+// });
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}...`);
 });
 
 app.get('/', (req, res) => {
-  res.render('index', {login : req.login});
-  // res.render('index');
+  // res.render('index', {login : req.login});
+  res.render('index');
 });
 
 app.use('/users', users);
