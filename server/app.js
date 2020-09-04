@@ -13,6 +13,7 @@ const Session = require('./model/session');
 const { type } = require('os');
 let session = new Session();
 
+app.set('views', path.join(__dirname, '../client/views'));
 app.set('view engine', 'pug');
 // use 함수는 모든 요청에 대응
 // 모든 요청에 use함수안에 있는 미들웨어를 사용해주세요 라는 의미
@@ -21,7 +22,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended : true}))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(async (req, res, next) => {
   if (Object.prototype.hasOwnProperty.call(req.cookies, 'SID')) {
     const isSession = await session.sessionCheck(req.cookies.SID);

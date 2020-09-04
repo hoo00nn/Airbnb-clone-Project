@@ -4,7 +4,7 @@ const router = express.Router();
 const path = require('path');
 const bcrypt = require('bcrypt');
 const saltRounds = 5;
-const {userDB, sessionDB} = require('../public/database/db');
+const {userDB, sessionDB} = require('../database/db');
 
 router.post('/', async (req, res) => {
   const emailValidation = await emailCheck(req.body.email);

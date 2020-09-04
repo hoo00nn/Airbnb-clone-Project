@@ -6,8 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "start:dev": "nodemon app.js"
+    "start": "node ./server/app.js",
+    "start:dev": "nodemon ./server/app.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
