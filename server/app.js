@@ -1,16 +1,14 @@
-const createError = require('http-errors');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const path = require('path');
-const port = process.env.PORT || 3000;
+const {port} = require('./env');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const register = require('./routes/register');
 const Session = require('./model/session');
-const { type } = require('os');
 let session = new Session();
 
 app.set('views', path.join(__dirname, '../client/views'));
@@ -46,6 +44,7 @@ app.get('/', (req, res) => {
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/register', register);
+
 
 // error handler
 app.use(function (err, req, res, next) {
