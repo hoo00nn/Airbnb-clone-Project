@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  return res.json({result : 'true'});
-});
+const { getOptionRooms } = require('../middlewares/rooms');
+
+router.get('/', getOptionRooms);
 
 module.exports = router;
