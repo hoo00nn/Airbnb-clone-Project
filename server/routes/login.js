@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { loginAuth } = require('../middlewares/auth');
+const { loginAuth } = require('../middlewares/login');
 
-router.post('/', loginAuth, (req, res) => {
-  return res.redirect('/');
-});
+router.post('/', loginAuth);
 
 module.exports = router;

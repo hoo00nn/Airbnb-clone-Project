@@ -3,8 +3,6 @@ const router = express.Router();
 
 const { signup } = require('../middlewares/signup');
 
-router.post('/', signup, (req, res) => {
-  return res.redirect('/');
-})
+router.post('/', signup);
 
 module.exports = router;

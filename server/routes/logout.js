@@ -3,8 +3,6 @@ const router = express.Router();
 
 const { clearAll } = require('../middlewares/logout');
 
-router.get('/', clearAll, (req, res) => {
-  return res.redirect('/');
-});
+router.get('/', clearAll);
 
 module.exports = router;

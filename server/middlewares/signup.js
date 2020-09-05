@@ -28,7 +28,7 @@ const bcryptPassword = (password) => {
   })
 }
 
-const signup = async (req, res, next) => {
+const signup = async (req, res) => {
   const emailValidation = await emailCheck(req.body.email);
   
   if (emailValidation) {
@@ -37,7 +37,7 @@ const signup = async (req, res, next) => {
     req.body.password = hash;
     createUser(req.body);
 
-    next();
+    return res.redirect('/');
   }
   else return res.json({result : 'false'});
 }
