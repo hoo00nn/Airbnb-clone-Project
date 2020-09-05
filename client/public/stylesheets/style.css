@@ -6,6 +6,7 @@
 @import "./layout/login_modal.css";
 @import "./layout/searchbar.css";
 @import "./component/card.css";
+@import "./rooms.css";
 
 body {
   padding: 0px;

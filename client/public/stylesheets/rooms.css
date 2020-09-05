@@ -1,0 +1,43 @@
+.rooms__header {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 100px 20px 70px;
+}
+
+.search__info {
+  display: flex;
+  font-size: 14px;
+  color: #808080;
+}
+
+.search__location {
+  margin: 5px 0;
+}
+·
+.rooms__header .search__info .location {
+  margin-right: 3px;
+}
+
+.rooms__header .search__info .checkin,
+.rooms__header .search__info .checkout {
+  margin: 0 1.5px;
+}
+
+.rooms__header .search__info .personnel {
+  margin-left: 3px;
+}
+
+.rooms__header .search__filter > button {
+  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 30px;
+  outline: none;
+  border: 1px solid rgb(176, 176, 176);
+}
+
+.rooms__header .search__filter > button:hover {
+  border-color: black;
+}
