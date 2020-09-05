@@ -4,6 +4,7 @@
 @import "./util/modal.css";
 @import "./layout/register_modal.css";
 @import "./layout/login_modal.css";
+@import "./layout/searchbar.css";
 
 body {
   padding: 0px;
