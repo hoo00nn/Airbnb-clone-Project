@@ -5,7 +5,7 @@
       .location
         label.location__wrap(for="location")
           span 위치
-          input(type="text", id="location", name="location", placeholder="어디로 여행가세요?")
+          input(type="text", id="location", name="location", required, placeholder="어디로 여행가세요?")
       .checkin
         label.checkin__wrap(for="checkin")
           span 체크인
@@ -18,7 +18,7 @@
         .personnel__wrap
           label(for="personnel").personnel__wrap__left
             span 인원
-            input(type="text", id="personnel", name="personnel", placeholder="게스트 추가")
+            input(type="text", id="personnel", name="personnel", required, placeholder="게스트 추가")
           .search__icon
             button(type="submit")
               img(src="/images/search_white.png")
