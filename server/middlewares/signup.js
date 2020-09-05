@@ -1,22 +1,6 @@
-const express = require('express');
-const app = express();
-const router = express.Router();
-const path = require('path');
 const bcrypt = require('bcrypt');
 const saltRounds = 5;
-const {userDB, sessionDB} = require('../database/db_connection');
-
-router.post('/', async (req, res) => {
-  const emailValidation = await emailCheck(req.body.email);
-  
-  if (emailValidation) {
-    const hash = await bcryptPassword(req.body.password);
-    req.body.password = hash;
-    createUser(req.body);
-    return res.redirect('/');
-  }
-  else return res.json({result : 'false'});
-})
+const { userDB } = require('../database/db_connection');
 
 const createUser = function(info) {
   userDB.insert(info, (err, doc) => {
@@ -27,7 +11,7 @@ const createUser = function(info) {
 
 const emailCheck = (email) => {
   return new Promise(resolve => {
-    userDB.find({email}, (err, result) => {
+    userDB.find({email : email}, (err, result) => {
       if (result.length > 0) resolve(false);
       else resolve(true);
     })
@@ -44,4 +28,20 @@ const bcryptPassword = (password) => {
   })
 }
 
-module.exports = router;
+const signup = async (req, res, next) => {
+  const emailValidation = await emailCheck(req.body.email);
+  
+  if (emailValidation) {
+    const hash = await bcryptPassword(req.body.password);
+
+    req.body.password = hash;
+    createUser(req.body);
+
+    next();
+  }
+  else return res.json({result : 'false'});
+}
+
+module.exports = {
+  signup
+}
