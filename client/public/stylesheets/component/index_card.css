@@ -1,7 +1,7 @@
 .index__card {
   display: flex;
   flex-direction: column;
-  width: 420px;
+  width: 400px;
   height: 380px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
