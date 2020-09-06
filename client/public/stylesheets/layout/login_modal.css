@@ -113,6 +113,7 @@
 .login__content__info .look__password {
   color: #008489;
   text-align: right;
+  cursor: pointer;
 }
 
 .login__content__info .forget__password {
