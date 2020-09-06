@@ -108,6 +108,7 @@
   border-radius: 5px;
   border-color: rgba(0, 0, 0, 0.2);
   border-width: 1px;
+  outline-color: #008489;
 }
 
 .login__content__info .look__password {
@@ -153,4 +154,19 @@
   margin-left: 8px;
   color: #008489;
   cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.header__login > .modal > .modal__content {
+  animation: fadeIn 0.5s ease-in-out;
 }
