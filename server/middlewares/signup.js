@@ -39,7 +39,7 @@ const signup = async (req, res) => {
 
     return res.redirect('/');
   }
-  else return res.json({result : 'false'});
+  return res.send('<script>alert("이미 가입된 이메일 입니다."); window.location.href="/"</script>');
 }
 
 module.exports = {
