@@ -94,6 +94,7 @@
 .personnel .personnel__wrap .personnel__wrap__left > input {
   border: none;
   background-color: inherit;
+  outline: none;
 }
 
 .personnel .personnel__wrap .search__icon > button {
