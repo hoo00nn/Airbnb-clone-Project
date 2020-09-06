@@ -5,8 +5,10 @@
 @import "./layout/register_modal.css";
 @import "./layout/login_modal.css";
 @import "./layout/searchbar.css";
-@import "./component/card.css";
+@import "./component/room_card.css";
+@import "./component/index_card.css";
 @import "./rooms.css";
+@import "./index.css";
 
 body {
   padding: 0px;

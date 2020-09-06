@@ -1,0 +1,7 @@
+mixin card(card={})
+  .index__card
+    .card__image
+      img(src=card.image)
+    .card__content
+      h3.card__title=card.title
+      span.card__description=card.description
