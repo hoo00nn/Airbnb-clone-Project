@@ -40,13 +40,10 @@ const loginAuth = async (req, res) => {
 
       res.cookie('SID', SID);
       session.setSID(SID, req.body);
+      return res.redirect('/');
     }
-
-    return res.redirect('/');
   }
-  else {
-    return res.redirect('/');
-  }
+  return res.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다. 다시 시도해 주세요."); window.location.href="/"</script>"');
 }
 
 module.exports = { 
