@@ -125,6 +125,16 @@
   padding: 15px 20px;
 }
 
+.header__right__dropdown__menu ul > li {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.header__right__dropdown__menu ul > li:hover {
+  background-color: #ebebeb;
+  border-radius: 50px;
+}
+
 .header__right__dropdown__menu ul > li#header__right__host {
   border-top: 1px solid #dddddd;
 }

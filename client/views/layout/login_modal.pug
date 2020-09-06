@@ -16,9 +16,9 @@ div.login__modal
   div.login__modal__content
     form(action="/login", method="POST")
       div.login__content__info
-        div
+        div.login__email
           input(type="text", placeholder="이메일 주소", name='email', required)
-        div
+        div.login__password
           input(type="password", placeholder="비밀번호", name='password', required)
         div.look__password
           span 비밀번호 보기
