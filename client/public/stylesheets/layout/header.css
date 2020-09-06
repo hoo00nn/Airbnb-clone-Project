@@ -117,6 +117,7 @@
   border: 1px solid #dddddd;
   border-radius: 15px;
   background-color: white;
+  z-index: 1;
 }
 
 .header__right__dropdown__menu ul > li,
