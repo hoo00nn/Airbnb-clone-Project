@@ -1,15 +1,17 @@
-const { getRooms } = require('../model/rooms');
+const { rooms } = require('../model/rooms');
 
 const getOptionRooms = async (req, res) => {
-  const data = await getRooms(req.query);
-  
+  const data = await rooms.selectAll();
+  const roomByOption = 
+    data.filter(v => req.query.location.includes(v.place) && v.maxPerson >= req.query.personnel);
+
   return res.render('rooms', {
-    data : data,
+    data : roomByOption,
     location : req.query.location,
     personnel : req.query.personnel,
     checkin : req.query.checkin,
     checkout : req.query.checkout,
-    length : data.length
+    length : roomByOption.length
   });
 }
 
