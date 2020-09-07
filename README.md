@@ -1,5 +1,8 @@
-# javascript-w1-airbnb
+# Week 1,2
 스프린트 1주차 웹 프로젝트 - airbnb
+
+## 배포 주소
+https://airbnb-j118.herokuapp.com/
 
 ## client directory structure
 
