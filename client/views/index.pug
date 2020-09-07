@@ -1,0 +1,28 @@
+extends ./layout/layout.pug
+include ./component/index_card.pug
+
+block content
+  .index__content
+    .index__content__top
+      .top__image
+        img(src="https://a0.muscache.com/im/pictures/16df1348-322f-4482-8694-3ccbdbf078b1.jpg?im_w=1440")
+        span 이제, 여행은 가까운 곳에서.
+        span 가까운 곳의 숨겨진 아름다움을 발견하는
+        span 색다른 휴가를 즐겨보세요.
+        span 가까운 여행지 둘러보기
+    .index__card__wrap
+      +card({
+        image: 'https://a0.muscache.com/im/pictures/eb9c7c6a-ee33-414a-b1ba-14e8860d59b3.jpg?im_w=720',
+        title: '온라인 체험',
+        description: '세계 각지의 호스트가 진행하고 모두 함께 즐기는 독특한 액티비티'
+      })
+      +card({
+        image: 'https://a0.muscache.com/im/pictures/15159c9c-9cf1-400e-b809-4e13f286fa38.jpg?im_w=720',
+        title: '독특한 공간',
+        description: '단순한 숙소 이상의 특별함이 담긴 공간'
+      })
+      +card({
+        image: 'https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720',
+        title: '집 전체',
+        description: '일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요.'
+      })

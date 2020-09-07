@@ -1,0 +1,11 @@
+mixin rooms(room={}) 
+  .room__card
+    .card__image
+      img.room__img(src=room.image)
+    .card__content
+      .room__title=room.title
+      .room__border
+      .room__description=room.description1
+      .room__option=room.description2
+      .room__price 
+        span=room.price

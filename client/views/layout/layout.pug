@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+  body
+    include header.pug
+    include searchbar.pug
+    block content
+    include footer.pug
+  script(src='/javascripts/util/modal.js')
+  script(src='/javascripts/util/dropdown.js')
+  script(src='/javascripts/layout/header.js')

@@ -1,0 +1,29 @@
+extends ./layout/layout.pug
+include component/room_card.pug
+
+block content
+  .rooms__header
+    .search__info
+      if location !== ''
+        span.location #{length}개의 숙소  ·
+      if checkin !== ''
+        span.checkin #{checkin}  -
+      if checkout !== ''
+        span.checkout #{checkout}  ·
+      if personnel !== ''
+        span.personnel 게스트 #{personnel}명
+    h1.search__location #{location}의 숙소
+    .search__filter
+      button 유연한 환불 정책
+      button 숙소 유형
+      button 요금
+      button 침실과 침대
+      button 필터 추가하기
+  each room in data
+    +rooms({
+      title:room.title,
+      description1:room.description1,
+      description2:room.description2,
+      image:room.image,
+      price:room.price
+    })

@@ -1,0 +1,65 @@
+.room__card {
+  display: flex;
+  height: 250px;
+  padding: 20px 10px 20px 10px;
+  margin: 0 90px 0 60px;
+  margin-bottom: 30px;
+  transition: all 0.2s 0.1s linear;
+}
+
+.room__card:hover {
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  transform: scale(1.05);
+}
+
+.room__card .card__image {
+  flex: 3 0 0;
+  width: 100%;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.room__card .card__image .room__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.room__card .card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 7 0 0;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.room__card .card__content .room__border {
+  border-bottom: 1px solid #808080;
+  width: 50px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+.room__card .card__content .room__title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.room__card .card__content .room__description,
+.room__card .card__content .room__option {
+  font-size: 14px;
+  color: #808080;
+  margin-bottom: 5px;
+}
+
+.room__card .card__content .room__price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  padding: 0 20px 20px 0;
+}

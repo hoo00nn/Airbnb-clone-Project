@@ -1,4 +1,5 @@
+/server/node_modules
 node_modules
-public/database/sessionDB
-public/database/userDB
-
+/server/database/users
+/server/database/sessions
+/server/database/rooms

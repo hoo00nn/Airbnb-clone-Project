@@ -1,0 +1,35 @@
+div.login__modal
+  div.login__modal__title 로그인
+  div.login__facebook
+    a(href="#")
+      div
+        img(src="/images/facebook_white.png")
+      div 페이스북 계정으로 로그인
+  div.login__google
+    a(href="#")
+      div
+        img(src="/images/google.svg")
+      div 구글 계정으로 로그인
+  div
+    span
+      span 또는
+  div.login__modal__content
+    form(action="/login", method="POST")
+      div.login__content__info
+        div.login__email
+          input(type="text", placeholder="이메일 주소", name='email', required)
+        div.login__password
+          input(type="password", placeholder="비밀번호", name='password', required)
+        div.look__password
+          span 비밀번호 보기
+        div.forget__password
+          a(href="#")
+            span 전화번호 로그인
+          span ·
+          a(href="#")
+            span 비밀번호를 잊으셨나요?
+        div.login__button
+          button(type="submit") 로그인
+  div.login__modal__footer
+    span 에어비앤비 계정이 없으세요?
+    span#register 회원 가입

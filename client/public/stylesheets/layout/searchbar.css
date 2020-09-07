@@ -1,0 +1,117 @@
+.searchbar {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 30px;
+}
+
+.searchbar .grid__left,
+.searchbar .grid__right {
+  flex: 2 0 0;
+  width: 100%;
+}
+
+.searchbar .grid__middle > form {
+  display: flex;
+  flex: 6 0 0;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 50px;
+  height: 100%;
+}
+
+.searchbar .grid__middle .location,
+.searchbar .grid__middle .personnel {
+  flex: 3 0 0;
+  width: 100%;
+}
+
+.searchbar .grid__middle .checkin,
+.searchbar .grid__middle .checkout {
+  flex: 2 0 0;
+  width: 100%;
+}
+
+.searchbar .grid__middle .location:hover,
+.searchbar .grid__middle .checkin:hover,
+.searchbar .grid__middle .checkout:hover,
+.searchbar .grid__middle .personnel:hover {
+  background-color: #ebebeb;
+  border-radius: 50px;
+}
+
+/* .searchbar .grid__middle .location,
+.searchbar .grid__middle .checkin,
+.searchbar .grid__middle .checkout {
+  border-right: 1px solid #dddddd;
+} */
+
+.grid__middle .location .location__wrap,
+.grid__middle .checkin .checkin__wrap,
+.grid__middle .checkout .checkout__wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 30px;
+}
+
+.grid__middle .personnel .personnel__wrap {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.personnel .personnel__wrap .personnel__wrap__left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.location .location__wrap > span,
+.checkin .checkin__wrap > span,
+.checkout .checkout__wrap > span,
+.personnel .personnel__wrap .personnel__wrap__left > span {
+  font-size: 12px;
+}
+
+.location .location__wrap > span:nth-of-type(1),
+.checkin .checkin__wrap > span:nth-of-type(1),
+.checkout .checkout__wrap > span:nth-of-type(1),
+.personnel .personnel__wrap .personnel__wrap__left > span:nth-of-type(1) {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.location .location__wrap >input,
+.checkin .checkin__wrap >input,
+.checkout .checkout__wrap >input,
+.personnel .personnel__wrap .personnel__wrap__left > input {
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+
+.personnel .personnel__wrap .search__icon > button {
+  border: none;
+  border-radius: 24px;
+  max-width: 48px;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  background-color: #FF385C;
+  padding: 13px;
+}
+
+.personnel .personnel__wrap .search__icon > button > img {
+  position: absolute;
+  width: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
