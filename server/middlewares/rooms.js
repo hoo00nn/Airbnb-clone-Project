@@ -11,7 +11,8 @@ const getOptionRooms = async (req, res) => {
     personnel : req.query.personnel,
     checkin : req.query.checkin,
     checkout : req.query.checkout,
-    length : roomByOption.length
+    length : roomByOption.length,
+    maxPerson: roomByOption.maxPerson
   });
 }
 

@@ -1,5 +1,6 @@
 extends ./layout/layout.pug
 include component/room_card.pug
+include component/reservation_modal.pug
 
 block content
   .rooms__header
@@ -27,3 +28,16 @@ block content
       image:room.image,
       price:room.price
     })
+    .modal__open.reservation 예약
+      .modal.hidden
+        .modal__overlay
+        .modal__content
+            +reservation({
+              price:room.price,
+              maxPerson:room.maxPerson,
+              checkin: checkin,
+              checkout: checkout,
+              personnel: personnel
+            })
+
+  script(src='/javascripts/reservation_modal.js')

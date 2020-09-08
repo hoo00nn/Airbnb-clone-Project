@@ -1,6 +1,10 @@
-let dropdown = document.querySelector('.dropdown');
+let dropdown = document.getElementsByClassName('dropdown');
 
-dropdown.addEventListener('click', () => {
-  if (dropdown.classList.contains('closed')) dropdown.classList.remove('closed');
-  else dropdown.classList.add('closed');
-});
+for(let i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener('click', (e) => {
+    const dropdown = e.currentTarget;
+    
+    if(dropdown.classList.contains('closed')) dropdown.classList.remove('closed');
+    else dropdown.classList.add('closed');
+  })
+}
