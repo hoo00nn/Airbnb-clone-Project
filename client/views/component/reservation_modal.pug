@@ -1,0 +1,24 @@
+mixin reservation(data={})
+  input.data(type="hidden", value=`${JSON.stringify(data)}`)
+  .reservation__modal
+    .reservation__price
+      span=data.price
+      span /박
+    .reservation__date
+      span 날짜
+      input(type="text", readonly, value=`${data.checkin} -- ${data.checkout}`)
+    .reservation__guest
+      span 인원
+      select(name="guest")
+        -for(let i = 1; i <= data.maxPerson; i++)
+          option(value=`${i}`) 게스트 #{i}명
+    .reservation__info
+      .price
+        span.price__left
+        span.price__right
+      .total__price
+        span.total__price__left 합계
+        span.total__price__right
+    button.reservation__button 예약하기
+    .reservation__footer
+      span 예약 확정 전에는 요금이 청구되지 않습니다.

@@ -1,0 +1,80 @@
+.reservation__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation__modal .reservation__price {
+  display: flex;
+}
+
+.reservation__modal .reservation__price > span:nth-of-type(1) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.reservation__modal .reservation__price > span:nth-of-type(2) {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: auto;
+}
+
+.reservation__modal .reservation__date {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation__modal .reservation__date > input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  outline-color: #008489;
+}
+
+.reservation__modal .reservation__guest {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.reservation__modal .reservation__guest > select {
+  width: 100%;
+  padding: 11px 40px 11px 11px;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+}
+
+.reservation__modal .reservation__date > span,
+.reservation__modal .reservation__guest > span {
+  text-align: start;
+}
+
+.reservation__modal .reservation__button {
+  width: 100%;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  background: rgb(255, 90, 95);
+  border-color: transparent;
+}
+
+.reservation__modal .reservation__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation__modal .reservation__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.reservation__modal .reservation__footer > span {
+  font-size: 14px;
+}
