@@ -87,3 +87,13 @@ class Calendar {
     this.dayClickEvent();
   }
 }
+
+
+const datepicker = document.querySelectorAll('.datepicker__wrap');
+const datepicker_overlay = document.querySelectorAll('.datepicker__overlay');
+
+datepicker.forEach(v => {
+  const calendar = new Calendar(new Date().getFullYear(), new Date().getMonth() + 1, v);
+  
+  calendar.makeCalendar();
+});
