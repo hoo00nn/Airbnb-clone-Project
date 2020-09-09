@@ -41,4 +41,28 @@ class Calendar {
       dayOfWeek.insertAdjacentHTML('beforeend', tag);
     }
   }
+
+  makeButtonElement() {
+    const MONTH = 12;
+    const nextMonth = this.month + 1 > MONTH ? (this.month+1) % MONTH : this.month + 1;
+    const nextYear = this.month + 1 > MONTH ? this.year + 1 : this.year;
+    const previousMonth = this.month - 1 < 1 ? MONTH : this.month - 1;
+    const previousYear = this.month - 1 < 1 ? this.year - 1 : this.year;
+    const next = this.datepicker.querySelector('.next__button');
+    const previous = this.datepicker.querySelector('.previous__button');
+  
+    if (new Date().getFullYear() === this.year && new Date().getMonth() + 1 === this.month) {
+      next.setAttribute('data-month', `${nextMonth}`);
+      next.setAttribute('data-year', `${nextYear}`);
+      previous.classList.add('datepicker__button__hide');
+    } 
+    else {
+      next.setAttribute('data-month', `${nextMonth}`);
+      next.setAttribute('data-year', `${nextYear}`);
+      previous.setAttribute('data-month', `${previousMonth}`);
+      previous.setAttribute('data-year', `${previousYear}`);
+      previous.classList.remove('datepicker__button__hide');
+    }
+  }
+  
 }
