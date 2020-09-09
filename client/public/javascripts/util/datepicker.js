@@ -65,4 +65,12 @@ class Calendar {
     }
   }
   
+  dayClickEvent() {
+    const days = this.datepicker.querySelector('.dayOfWeek');
+  
+    days.addEventListener('click', (e) => {
+      if (days.querySelector('.selected') !== null ) days.querySelector('.selected').classList.remove('selected');
+      if (e.target.classList.contains('day')) e.target.classList.add('selected');
+    })
+  }
 }
