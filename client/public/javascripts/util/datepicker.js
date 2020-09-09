@@ -6,6 +6,11 @@ class Calendar {
     this.week = ['일', '월', '화', '수', '목', '금', '토'];
   }
 
+  setDate(year, month) {
+    this.year = year;
+    this.month = month;
+  }
+
   makeTitleElement() {
     const title = this.datepicker.querySelector('.title');
   
