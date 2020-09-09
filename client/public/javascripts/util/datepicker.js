@@ -133,7 +133,8 @@ datepicker.forEach(v => {
 
 datepicker_overlay.forEach(v => {
   v.addEventListener('click', (e) => { 
-
+    e.stopPropagation();
+    
     e.currentTarget.parentNode.classList.add('hide');
   })
 });
