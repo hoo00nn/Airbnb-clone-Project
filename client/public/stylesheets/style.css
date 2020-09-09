@@ -10,6 +10,7 @@
 @import "./component/reservation_modal.css";
 @import "./rooms.css";
 @import "./index.css";
+@import "./component/datepicker.css";
 
 * {
   box-sizing: border-box;
