@@ -34,6 +34,11 @@
   background-color: white;
 }
 
+.datepicker .title__wrap .previous__button:focus,
+.datepicker .title__wrap .next__button:focus {
+  outline: none;
+}
+
 .datepicker .title__wrap .next__button {
   position: absolute;
   right: 0;

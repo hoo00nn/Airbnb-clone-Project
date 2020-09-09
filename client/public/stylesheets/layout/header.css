@@ -53,6 +53,10 @@
   height: 40px;
 }
 
+.header__right .header__right__button:focus {
+  outline: none;
+}
+
 .header__right__button.dropdown.closed ~ .menu {
   display: none;
 }
