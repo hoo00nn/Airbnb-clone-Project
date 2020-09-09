@@ -120,4 +120,13 @@ datepicker.forEach(v => {
     calendar.setDate(year, month);
     calendar.makeCalendar();
   });
-})
+
+  v.addEventListener('click', (e) => {
+    e.preventDefault(); 
+
+    const input = e.currentTarget.nextSibling.querySelector('input');
+    const date = e.target.dataset.date;
+
+    input.setAttribute('value', date);
+  })
+});
