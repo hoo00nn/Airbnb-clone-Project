@@ -94,6 +94,30 @@ const datepicker_overlay = document.querySelectorAll('.datepicker__overlay');
 
 datepicker.forEach(v => {
   const calendar = new Calendar(new Date().getFullYear(), new Date().getMonth() + 1, v);
-  
+  const next = v.querySelector('.next__button');
+  const previous = v.querySelector('.previous__button');
+
   calendar.makeCalendar();
-});
+
+
+  next.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const year = parseInt(e.target.dataset.year);
+    const month = parseInt(e.target.dataset.month);
+    
+    calendar.setDate(year, month);
+    calendar.makeCalendar();
+  });
+
+
+  previous.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const year = parseInt(e.target.dataset.year);
+    const month = parseInt(e.target.dataset.month);
+
+    calendar.setDate(year, month);
+    calendar.makeCalendar();
+  });
+})
