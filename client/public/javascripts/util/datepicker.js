@@ -73,4 +73,12 @@ class Calendar {
       if (e.target.classList.contains('day')) e.target.classList.add('selected');
     })
   }
+
+  makeCalendar() {
+    this.makeTitleElement();
+    this.makeWeekElement();
+    this.makeDaysElement();
+    this.makeButtonElement();
+    this.dayClickEvent();
+  }
 }
