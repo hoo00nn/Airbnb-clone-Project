@@ -30,21 +30,16 @@
 .searchbar .grid__middle .checkout {
   flex: 2 0 0;
   width: 100%;
+  position: relative;
 }
 
-.searchbar .grid__middle .location:hover,
-.searchbar .grid__middle .checkin:hover,
-.searchbar .grid__middle .checkout:hover,
+.searchbar .grid__middle .location > label:hover,
+.searchbar .grid__middle .checkin > label:hover,
+.searchbar .grid__middle .checkout > label:hover,
 .searchbar .grid__middle .personnel:hover {
   background-color: #ebebeb;
   border-radius: 50px;
 }
-
-/* .searchbar .grid__middle .location,
-.searchbar .grid__middle .checkin,
-.searchbar .grid__middle .checkout {
-  border-right: 1px solid #dddddd;
-} */
 
 .grid__middle .location .location__wrap,
 .grid__middle .checkin .checkin__wrap,
@@ -55,6 +50,12 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0 30px;
+}
+
+.checkin .datepicker__wrap,
+.checkout .datepicker__wrap {
+  position: absolute;
+  top: 80px;
 }
 
 .grid__middle .personnel .personnel__wrap {
