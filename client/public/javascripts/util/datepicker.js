@@ -130,3 +130,10 @@ datepicker.forEach(v => {
     input.setAttribute('value', date);
   })
 });
+
+datepicker_overlay.forEach(v => {
+  v.addEventListener('click', (e) => { 
+
+    e.currentTarget.parentNode.classList.add('hide');
+  })
+});
