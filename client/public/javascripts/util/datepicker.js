@@ -12,5 +12,13 @@ class Calendar {
     title.innerHTML = '';
     title.innerHTML = `${this.year}년 ${this.month}월`;
   }
-}
 
+  makeWeekElement() {
+    const days = this.datepicker.querySelector('.days');
+    days.innerHTML = '';
+  
+    for(let i = 0; i < this.week.length; i++) {
+      days.insertAdjacentHTML('beforeend', `<li>${this.week[i]}</li>`);
+    }
+  }
+}
