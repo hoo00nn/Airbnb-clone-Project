@@ -1,0 +1,97 @@
+.datepicker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 32px;
+  width: 350px;
+  row-gap: 3px;
+  padding: 16px 32px;
+  background-color: white;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px
+}
+
+.datepicker__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.datepicker .title__wrap {
+  position: relative;
+  margin: 20px 0 27px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.datepicker .title__wrap .previous__button {
+  position: absolute;
+  left: 0;
+  border: none;
+  background-color: white;
+}
+
+.datepicker .title__wrap .next__button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: white;
+}
+
+.datepicker .days {
+  color: #717171;
+  font-size: 12px;
+}
+
+.datepicker .dayOfWeek__wrap {
+  height: 100%;
+  font-size: 14px;
+}
+
+.datepicker .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.datepicker .dayOfWeek {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: stretch;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.datepicker .dayOfWeek .day {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.datepicker .dayOfWeek .day:hover {
+  border: 1px solid #222222;
+  border-radius: 100%;
+}
+
+.datepicker__button__hide {
+  display: none;
+}
+
+.datepicker .day.selected {
+  color: white;
+  background-color: black;
+  border-radius: 100%;
+}
+
+.datepicker__wrap.hide {
+  display: none;
+}
