@@ -79,6 +79,26 @@ class Calendar {
     })
   }
 
+  nextButtonClickEvent(event) {
+    event.preventDefault();
+
+    const year = parseInt(event.target.dataset.year);
+    const month = parseInt(event.target.dataset.month);
+    
+    this.setDate(year, month);
+    this.makeCalendar();
+  }
+
+  previousButtonClickEvent(event) {
+    event.preventDefault();
+
+    const year = parseInt(event.target.dataset.year);
+    const month = parseInt(event.target.dataset.month);
+
+    this.setDate(year, month);
+    this.makeCalendar();
+  }
+
   makeCalendar() {
     this.makeTitleElement();
     this.makeWeekElement();
@@ -99,27 +119,8 @@ datepicker.forEach(v => {
 
   calendar.makeCalendar();
 
-
-  next.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const year = parseInt(e.target.dataset.year);
-    const month = parseInt(e.target.dataset.month);
-    
-    calendar.setDate(year, month);
-    calendar.makeCalendar();
-  });
-
-
-  previous.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const year = parseInt(e.target.dataset.year);
-    const month = parseInt(e.target.dataset.month);
-
-    calendar.setDate(year, month);
-    calendar.makeCalendar();
-  });
+  next.addEventListener('click', e => calendar.nextButtonClickEvent(e));
+  previous.addEventListener('click', e => calendar.previousButtonClickEvent(e));
 
   v.addEventListener('click', (e) => {
     e.preventDefault(); 
@@ -127,8 +128,9 @@ datepicker.forEach(v => {
     const input = e.currentTarget.nextSibling.querySelector('input');
     const date = e.target.dataset.date;
 
-    input.setAttribute('value', date);
-  })
+    if (date === undefined) input.setAttribute('value', '');
+    else input.setAttribute('value', date);
+  });
 });
 
 datepicker_overlay.forEach(v => {
