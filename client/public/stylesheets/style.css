@@ -13,6 +13,7 @@
 @import "./global.css";
 @import "./component/searchbar_guest_modal.css";
 @import "./reservation.css";
+@import "./component/reservation_card.css";
 
 * {
   box-sizing: border-box;

@@ -13,3 +13,9 @@
   margin-bottom: 4px;
   border-bottom: 2px solid black;
 }
+
+.reservation__card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 80px;
+}

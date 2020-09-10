@@ -1,3 +1,5 @@
+include component/reservation_card.pug
+
 doctype html
 html
   head
@@ -10,6 +12,15 @@ html
       h1 여행
       .reservation__info
         span 예정된 예약
+    .reservation__card
+      each room in data
+        +reservation({
+          title: room.title,
+          image: room.image,
+          checkin: room.checkin,
+          checkout: room.checkout,
+          location: room.location
+        })
     include layout/footer.pug
 
   script(src='/javascripts/util/modal.js')
