@@ -1,3 +1,18 @@
-extends ./layout/layout.pug
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+  body
+    include layout/header.pug
+    .reservation__content
+      h1 여행
+      .reservation__info
+        span 예정된 예약
+    include layout/footer.pug
 
-block content
+  script(src='/javascripts/util/modal.js')
+  script(src='/javascripts/util/dropdown.js')
+  script(src='/javascripts/layout/header.js')
+  script(src='/javascripts/util/datepicker.js')
