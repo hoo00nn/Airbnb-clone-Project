@@ -13,6 +13,13 @@ const reservation = async (req, res) => {
   else res.send('<script type="text/javascript">alert("로그인이 필요합니다. 로그인 하신 후 다시 시도해 주세요.");</script>"');
 }
 
+const renderReservationPage = async (req, res) => {
+  const email = await findEmail(req.cookies.SID);
+  const data = await findReservation(email);
+
+  res.render('reservation', {data : data});
+}
+
 const findEmail = (SID) => {
   return new Promise(resolve => {
     sessionDB.findOne({SID : SID}, (err, data) => {
@@ -45,5 +52,6 @@ const insertReservation = (data) => {
 }
 
 module.exports = {
-  reservation
+  reservation,
+  renderReservationPage
 }
