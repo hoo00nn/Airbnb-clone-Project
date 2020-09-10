@@ -65,3 +65,16 @@ class Reservation {
   }
 }
 
+const roomCard = document.querySelectorAll('.room__card');
+
+roomCard.forEach(v => {
+const reservationButton = v.querySelector('.reservation');
+
+reservationButton.addEventListener('click', (e) => {
+  const reservationDOM = e.target.querySelector('.reservation__modal');
+  const data = JSON.parse(e.target.querySelector('.data').getAttribute('value'));
+  const reservation = new Reservation(data, reservationDOM);
+
+  reservation.makeReservationModal();
+})
+})
