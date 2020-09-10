@@ -42,7 +42,17 @@ class Reservation {
   makeCommaOfPrice(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+
+  makeTotalPrice() {
+    const total = this.reservation.querySelector('.reservation__info').querySelector('.total__price__right');
+    const clean = this.reservation.querySelector('.reservation__info').querySelector('.clean__right').textContent;
+    const service = this.reservation.querySelector('.reservation__info').querySelector('.service__right').textContent;
+    const fees = this.reservation.querySelector('.reservation__info').querySelector('.fees__right').textContent;
+    const price = this.makePriceOfPeriod();
+  
+    total.innerText = `₩${this.makeCommaOfPrice(parseInt(clean.replace(',', '').replace('₩', '')) + 
+                        parseInt(service.replace(',', '').replace('₩', '')) +
+                        parseInt(fees.replace(',', '').replace('₩', '')) +
+                        parseInt(price.replace(',', '')))}`;
+  }
 }
-
-
-
