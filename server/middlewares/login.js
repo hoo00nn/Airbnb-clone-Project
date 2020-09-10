@@ -29,7 +29,6 @@ const checkPassword = (password, hash) => {
 }
 
 const loginAuth = async (req, res) => {
-  console.log(req.body);
   const correctEmail = await checkEmail(req.body.email);
   
   if (correctEmail) {
