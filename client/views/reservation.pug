@@ -1,3 +1,29 @@
-extends ./layout/layout.pug
+include component/reservation_card.pug
 
-block content
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon", href="/images/favicon.ico", type="image/x-icon")
+  body
+    include layout/header.pug
+    .reservation__content
+      h1 여행
+      .reservation__info
+        span 예정된 예약
+    .reservation__card
+      each room in data
+        +reservation({
+          title: room.title,
+          image: room.image,
+          checkin: room.checkin,
+          checkout: room.checkout,
+          location: room.location
+        })
+    include layout/footer.pug
+
+  script(src='/javascripts/util/modal.js')
+  script(src='/javascripts/util/dropdown.js')
+  script(src='/javascripts/layout/header.js')
+  script(src='/javascripts/util/datepicker.js')

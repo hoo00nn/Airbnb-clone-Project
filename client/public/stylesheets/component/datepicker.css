@@ -100,3 +100,13 @@
 .datepicker__wrap.hide {
   display: none;
 }
+
+.datepicker .dayOfWeek .day.not__allow__click {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  pointer-events: none;
+  color: rgb(235, 235, 235);
+  background: rgb(255, 255, 255);
+}

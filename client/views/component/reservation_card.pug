@@ -1,0 +1,12 @@
+mixin reservation(data={})
+  .card__wrap
+    .card__img
+      img(src=data.image)
+    .card__content
+      .content__period
+        span #{data.checkin} ~ #{data.checkout}
+      .content__title
+        h3=data.location
+      .content__description
+        img(src=data.image)
+        span #{data.title}

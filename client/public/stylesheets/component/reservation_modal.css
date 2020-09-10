@@ -1,10 +1,13 @@
 .reservation__modal {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .reservation__modal .reservation__price {
   display: flex;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #dddddd;
 }
 
 .reservation__modal .reservation__price > span:nth-of-type(1) {
@@ -18,12 +21,20 @@
   margin-top: auto;
 }
 
-.reservation__modal .reservation__date {
+.reservation__modal .reservation__date,
+.reservation__modal .reservation__guest {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 5px 0;
 }
 
-.reservation__modal .reservation__date > input {
+.reservation__modal .reservation__date {
+  margin-top: 15px;
+}
+
+.reservation__modal .reservation__date > input,
+.reservation__modal .reservation__guest > input {
   width: 100%;
   padding: 11px;
   border-radius: 5px;
@@ -32,26 +43,13 @@
   outline-color: #008489;
 }
 
-.reservation__modal .reservation__guest {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.reservation__modal .reservation__guest > select {
-  width: 100%;
-  padding: 11px 40px 11px 11px;
-  border-radius: 5px;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-width: 1px;
-}
-
 .reservation__modal .reservation__date > span,
 .reservation__modal .reservation__guest > span {
   text-align: start;
+  margin-bottom: 5px;
 }
 
-.reservation__modal .reservation__button {
+.reservation__modal .reservation__button > button {
   width: 100%;
   color: #ffffff;
   font-size: 16px;
@@ -68,6 +66,23 @@
 .reservation__modal .reservation__info {
   display: flex;
   flex-direction: column;
+  color: #484848;
+  opacity: 0.7;
+}
+
+.reservation__modal .reservation__info .price,
+.reservation__modal .reservation__info .clean,
+.reservation__modal .reservation__info .service,
+.reservation__modal .reservation__info .fees,
+.reservation__modal .reservation__info .total__price {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-top: 1px solid #dddddd;
+}
+
+.reservation__modal .reservation__info .price {
+  border: none;
 }
 
 .reservation__modal .reservation__footer {
@@ -76,5 +91,6 @@
 }
 
 .reservation__modal .reservation__footer > span {
+  margin: 15px 0;
   font-size: 14px;
 }

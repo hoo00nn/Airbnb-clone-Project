@@ -1,0 +1,21 @@
+.reservation__content {
+  padding: 20px 80px;
+}
+
+.reservation__content .reservation__info {
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid #dddddd;
+  margin: 16px 20px 16px 0;
+}
+
+.reservation__content .reservation__info > span {
+  padding: 16px 0;
+  margin-bottom: 4px;
+  border-bottom: 2px solid black;
+}
+
+.reservation__card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 80px;
+}

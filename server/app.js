@@ -8,7 +8,6 @@ const {port} = require('./env');
 const { checkSession } = require('./middlewares/session');
 
 const indexRouter = require('./routes/index');
-const api = require('./api/index');
 
 app.set('views', path.join(__dirname, '../client/views'));
 app.set('view engine', 'pug');
@@ -22,7 +21,6 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.use(checkSession);
 app.use('/', indexRouter);
-app.use('/api', api);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}...`);

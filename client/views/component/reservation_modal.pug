@@ -1,24 +1,34 @@
 mixin reservation(data={})
-  input.data(type="hidden", value=`${JSON.stringify(data)}`)
-  .reservation__modal
-    .reservation__price
-      span=data.price
-      span /박
-    .reservation__date
-      span 날짜
-      input(type="text", readonly, value=`${data.checkin} -- ${data.checkout}`)
-    .reservation__guest
-      span 인원
-      select(name="guest")
-        -for(let i = 1; i <= data.maxPerson; i++)
-          option(value=`${i}`) 게스트 #{i}명
-    .reservation__info
-      .price
-        span.price__left
-        span.price__right
-      .total__price
-        span.total__price__left 합계
-        span.total__price__right
-    button.reservation__button 예약하기
-    .reservation__footer
-      span 예약 확정 전에는 요금이 청구되지 않습니다.
+  form(action="/reservation", method="POST")
+    input.data(type="hidden", name="data", value=`${JSON.stringify(data)}`)
+    .reservation__modal
+      .reservation__price
+        span.price
+        span /박
+      .reservation__date
+        span 날짜
+        input.date(type="text", name="date", readonly)
+      .reservation__guest
+        span 인원
+        input.guest(type="text", name="guest", readonly)
+      .reservation__info
+        .price
+          span.price__left
+          span.price__right
+        .clean
+          span.clean__left 청소비
+          span.clean__right ₩34,208
+        .service
+          span.service__left 서비스 수수료
+          span.service__right ₩202,501
+        .fees
+          span.fees__left 숙박세와 수수료
+          span.fees__right ₩61,410
+        .total__price
+          span.total__price__left 합계
+          span.total__price__right
+      .reservation__button
+        button 예약하기
+      .reservation__footer
+        span 예약 확정 전에는 요금이 청구되지 않습니다.
+      

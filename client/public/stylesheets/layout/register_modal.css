@@ -5,7 +5,7 @@
 
 .register__modal__title {
   text-align: center;
-  font-size: 16px;
+  font-size: var(--font-regular);
   font-weight: bold;
   padding: 12px;
   border-bottom: 1px solid #eeeeee;
@@ -13,7 +13,7 @@
 
 .register__modal > div:nth-of-type(2) {
   text-align: center;
-  font-size: 14px;
+  font-size: var(--font-small);
   color: #484848;
   margin: 12px;
 }
@@ -37,13 +37,13 @@
 }
 
 .register__modal > div:nth-of-type(3) > span > span {
-  font-size: 14px;
+  font-size: var(--font-small);
   color: rgb(118, 118, 118);
 }
 
 .register__modal .register__modal__footer {
   text-align: left;
-  font-size: 16px;
+  font-size: var(--font-regular);
   color: #484848;
   padding: 16px 16px 0 0;
   border-top: 1px solid #eeeeee;
@@ -80,7 +80,7 @@
 .register__modal__content .content__register__info > div:nth-of-type(8),
 .register__modal__content .content__register__info > div:nth-of-type(9) {
   text-align: left;
-  font-size: 14px;
+  font-size: var(--font-small);
   color: #484848;
   font-weight: 400;
   opacity: 0.9;
@@ -89,14 +89,14 @@
 .register__modal__content .content__register__info > div:nth-of-type(5) {
   text-align: left;
   color: #484848;
-  font-size: 16px;
+  font-size: var(--font-regular);
   font-weight: 600;
 }
 
 .register__modal__content .content__register__info button {
   width: 100%;
   color: #ffffff;
-  font-size: 16px;
+  font-size: var(--font-regular);
   padding: 10px 22px;
   text-align: center;
   text-decoration: none;
