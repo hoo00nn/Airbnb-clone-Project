@@ -120,12 +120,28 @@ class Calendar {
     return curDateToInt - dateToInt > 0 ? true : false;
   }
 
+  isCompareCheckinValue() {
+    const checkinValue = document.querySelector('#checkin').getAttribute('value');
+    const calendar = document.querySelector('.checkout').querySelectorAll('.day');
+    
+    calendar.forEach(v => {
+      if (checkinValue === null)  return 
+
+      const value = checkinValue === null ? 0 : parseInt(checkinValue.split('-').join(''));
+      const compareValue =  parseInt(((v.dataset.date)).split('-').join(''));
+      if (value - compareValue >= 0) {
+        v.classList.add('not__allow__click');
+      } 
+    });
+  }
+
   makeCalendar() {
     this.makeTitleElement();
     this.makeWeekElement();
     this.makeDaysElement();
     this.makeButtonElement();
     this.dayClickEvent();
+    this.isCompareInputValue();
   }
 }
 
