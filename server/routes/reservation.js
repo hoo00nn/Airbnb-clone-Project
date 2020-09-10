@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  return res.render('reservation');
-})
+const { reservation } = require('../middlewares/reservation');
+
+router.post('/', reservation);
 
 module.exports = router;
