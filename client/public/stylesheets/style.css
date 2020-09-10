@@ -12,6 +12,7 @@
 @import "./component/datepicker.css";
 @import "./global.css";
 @import "./component/searchbar_guest_modal.css";
+@import "./reservation.css";
 
 * {
   box-sizing: border-box;
