@@ -1,16 +1,18 @@
-const reservationButton = document.getElementsByClassName('modal__open');
+class Reservation {
+  constructor(data, reservationDOM) {
+    this.price = data.price;
+    this.checkin = data.checkin;
+    this.checkout = data.checkout;
+    this.personnel = data.personnel;
+    this.reservation = reservationDOM;
+  }
 
-for(let i = 0; i < reservationButton.length; i++) {
-  reservationButton[i].addEventListener('click', (e) => {
-    const data = JSON.parse(e.target.querySelector('.data').getAttribute('value'));
-    getPeriod(data);
-  })
+  makePriceElement() {
+    const price = this.reservation.querySelector('.reservation__price').querySelector('.price');
+
+    price.innerText = `₩${this.price}`;
+  }
 }
 
-const getPeriod = (data) => {
-  const start = parseInt(data.checkin.split('.')[data.checkin.split('.').length-1]);
-  const end = parseInt(data.checkout.split('.')[data.checkout.split('.').length-1]);
-  const period = end - start;
-}
 
-
+  
