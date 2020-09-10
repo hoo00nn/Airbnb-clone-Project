@@ -28,7 +28,9 @@ guest.addEventListener('click', (e) => {
   if (e.target.classList.contains('minus__button')) {
     input.dataset.count = parseInt(input.dataset.count) - 1;
     input.innerHTML = input.dataset.count;
-    personnel.setAttribute('value', input_value - 1);
+
+    if((input_value-1) === 0) personnel.removeAttribute('value');
+    else personnel.setAttribute('value', input_value - 1);
 
     if (input.dataset.count < 1) {
       e.target.parentNode.querySelector('.minus__button').classList.remove('allow__click');
