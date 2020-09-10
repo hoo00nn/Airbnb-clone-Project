@@ -4,6 +4,15 @@ class Calendar {
     this.year = month > 12 ? year + 1 : year;
     this.month = month > 12 ? month % 12 : month;
     this.week = ['일', '월', '화', '수', '목', '금', '토'];
+    this.currentDate = this.setCurDate();
+  }
+
+  setCurDate() {
+    const year = new Date().getFullYear().toString();
+    const month = (new Date().getMonth()+1).toString().padStart(2, '0');
+    const day = new Date().getDate().toString().padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
   }
 
   setDate(year, month) {
@@ -41,8 +50,12 @@ class Calendar {
     for(let i = 1; i <= totalDayOfMonth; i++) {
       const monthToString = this.month < 10 ? this.month.toString().padStart(2, '0') : this.month.toString();
       const dayToString = i < 10 ? i.toString().padStart(2, '0') : i.toString();
-      const tag = `<li class="day" data-date=${this.year}-${monthToString}-${dayToString}>${i}</li>`;
-  
+      let tag = `<li class="day" data-date=${this.year}-${monthToString}-${dayToString}>${i}</li>`;
+      
+      if (this.isCompareDate(dayToString)) {
+        tag = `<li class="day not__allow__click" data-date=${this.year}-${monthToString}-${dayToString}>${i}</li>`;
+      }
+
       dayOfWeek.insertAdjacentHTML('beforeend', tag);
     }
   }
@@ -97,6 +110,14 @@ class Calendar {
 
     this.setDate(year, month);
     this.makeCalendar();
+  }
+
+  isCompareDate(day) {
+    const monthToString = this.month < 10 ? this.month.toString().padStart(2, '0') : this.month.toString();
+    const curDateToInt = parseInt(this.currentDate.split('-').join(''));
+    const dateToInt = parseInt((`${this.year}-${monthToString}-${day}`).split('-').join(''));
+
+    return curDateToInt - dateToInt > 0 ? true : false;
   }
 
   makeCalendar() {
