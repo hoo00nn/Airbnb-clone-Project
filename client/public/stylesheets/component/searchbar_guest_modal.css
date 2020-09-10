@@ -1,0 +1,101 @@
+.guest__wrap {
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: 1;
+  background: rgb(255, 255, 255);
+  border-radius: 32px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+  padding: 16px 32px;
+  margin-top: 16px;
+  width: 400px;
+}
+
+.guest__wrap .guest__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.guest__wrap .guest {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.guest .adult,
+.guest .child,
+.guest .infant {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 4px 16px 0;
+}
+
+.guest .child,
+.guest .infant {
+  border-top: 1px solid #dddddd;
+  padding-top: 15px;
+}
+
+.guest .adult .adult__left,
+.guest .child .child__left,
+.guest .infant .infant__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.guest .adult .adult__left > span:nth-of-type(1),
+.guest .child .child__left > span:nth-of-type(1),
+.guest .infant .infant__left > span:nth-of-type(1) {
+  font-size: var(--font-regular);
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.guest .adult .adult__left > span:nth-of-type(2),
+.guest .child .child__left > span:nth-of-type(2),
+.guest .infant .infant__left > span:nth-of-type(2) {
+  font-size: var(--font-small);
+  color: #717171;
+}
+
+.guest .adult .adult__right > button.not__allow__click,
+.guest .child .child__right > button.not__allow__click,
+.guest .infant .infant__right > button.not__allow__click {
+  width: 32px;
+  height: 32px;
+  cursor: not-allowed;
+  color: rgb(235, 235, 235);
+  border: 1px solid rgb(235, 235, 235);
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  outline: none;
+}
+
+.guest .adult .adult__right > button.allow__click,
+.guest .child .child__right > button.allow__click,
+.guest .infant .infant__right > button.allow__click {
+  width: 32px;
+  height: 32px;
+  color: rgb(113, 113, 113);
+  outline: none;
+  touch-action: manipulation;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 50%;
+}
+
+.guest .adult .adult__right > span.count,
+.guest .child .child__right > span.count,
+.guest .infant .infant__right > span.count {
+  margin: 0 10px;
+}
+
+.guest__wrap.hide {
+  display: none;
+}
