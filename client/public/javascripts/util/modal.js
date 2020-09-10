@@ -9,6 +9,8 @@ for(let i = 0; i < openButton.length; i++) {
 
 for(let i = 0; i < overlay.length; i++) {
   overlay[i].addEventListener('click', (e) => {
+    e.stopPropagation();
+    
     e.target.parentNode.classList.add('hidden');
   })
 }
