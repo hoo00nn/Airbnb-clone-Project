@@ -4,28 +4,18 @@ const lookPassword = document.querySelector('.look__password');
 
 // 로그인 버튼 클릭 시 로그인 모달 띄우는 로직
 headerLogin.addEventListener('click', (e) => {
-  document.querySelector('.header__register')
-  .querySelector('.modal')
-  .classList
-  .add('hidden');
+  const login = document.querySelector('.header__login');
 
-  document.querySelector('.header__login')
-  .querySelector('.modal')
-  .classList
-  .remove('hidden');
+  login.querySelector('.modal').classList.remove('hidden');
+  login.previousSibling.querySelector('.modal').classList.add('hidden');
 });
 
 // 회원가입 버튼 클릭 시 회원가입 모달 띄우는 로직
 headerRegister.addEventListener('click', (e) => {
-  document.querySelector('.header__login')
-  .querySelector('.modal')
-  .classList
-  .add('hidden');
+  const register = document.querySelector('.header__register');
 
-  document.querySelector('.header__register')
-  .querySelector('.modal')
-  .classList
-  .remove('hidden');
+  register.nextSibling.querySelector('.modal').classList.add('hidden');
+  register.querySelector('.modal').classList.remove('hidden');
 });
 
 
