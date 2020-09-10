@@ -18,7 +18,10 @@ mixin rooms(room={})
                     maxPerson:room.maxPerson,
                     checkin: checkin,
                     checkout: checkout,
-                    personnel: personnel
+                    personnel: personnel,
+                    title: room.title,
+                    location: room.location,
+                    image: room.image
                   })
         .room__price 
           span ₩#{room.price}
