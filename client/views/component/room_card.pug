@@ -9,17 +9,17 @@ mixin rooms(room={})
       .room__option=room.description2
       .content__footer
         .room__reservation
-          button.reservation.modal__open 예약하기
+          span.modal__open.reservation 예약하기
             .modal.hidden
               .modal__overlay
               .modal__content
-                  //- +reservation({
-                  //-   price:room.price,
-                  //-   maxPerson:room.maxPerson,
-                  //-   checkin: checkin,
-                  //-   checkout: checkout,
-                  //-   personnel: personnel
-                  //- })
-        .room__price
+                  +reservation({
+                    price:room.price,
+                    maxPerson:room.maxPerson,
+                    checkin: checkin,
+                    checkout: checkout,
+                    personnel: personnel
+                  })
+        .room__price 
           span ₩#{room.price}
           span /1박
