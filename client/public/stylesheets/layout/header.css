@@ -87,6 +87,7 @@
   padding: 14px;
   display: flex;
   align-items: flex-start;
+  line-height: 20px;
 }
 
 .header__right__wrap > div:nth-of-type(1):hover,
