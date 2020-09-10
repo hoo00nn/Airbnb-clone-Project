@@ -51,7 +51,7 @@
   text-align: start;
 }
 
-.reservation__modal .reservation__button {
+.reservation__modal .reservation__button > button {
   width: 100%;
   color: #ffffff;
   font-size: 16px;
