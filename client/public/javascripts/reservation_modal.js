@@ -55,4 +55,13 @@ class Reservation {
                         parseInt(fees.replace(',', '').replace('₩', '')) +
                         parseInt(price.replace(',', '')))}`;
   }
+
+  makeReservationModal() {
+    this.makePriceElement();
+    this.makeDateElement();
+    this.makeGuestElement();
+    this.makePriceOfPeriod();
+    this.makeTotalPrice();
+  }
 }
+
