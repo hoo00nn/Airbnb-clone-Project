@@ -21,23 +21,23 @@ block content
       button 침실과 침대
       button 필터 추가하기
   each room in data
-    +rooms({
-      title:room.title,
-      description1:room.description1,
-      description2:room.description2,
-      image:room.image,
-      price:room.price
-    })
-    .modal__open.reservation 예약
-      .modal.hidden
-        .modal__overlay
-        .modal__content
-            +reservation({
-              price:room.price,
-              maxPerson:room.maxPerson,
-              checkin: checkin,
-              checkout: checkout,
-              personnel: personnel
-            })
+      +rooms({
+        title:room.title,
+        description1:room.description1,
+        description2:room.description2,
+        image:room.image,
+        price:room.price
+      })
+      //- .modal__open.reservation 예약
+      //-   .modal.hidden
+      //-     .modal__overlay
+      //-     .modal__content
+      //-         +reservation({
+      //-           price:room.price,
+      //-           maxPerson:room.maxPerson,
+      //-           checkin: checkin,
+      //-           checkout: checkout,
+      //-           personnel: personnel
+      //-         })
 
   script(src='/javascripts/reservation_modal.js')
