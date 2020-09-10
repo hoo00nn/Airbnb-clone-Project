@@ -1,16 +1,16 @@
 mixin reservation(data={})
   form(action="/reservation", method="POST")
-    input.data(type="hidden", value=`${JSON.stringify(data)}`)
+    input.data(type="hidden", name="data", value=`${JSON.stringify(data)}`)
     .reservation__modal
       .reservation__price
         span.price
         span /박
       .reservation__date
         span 날짜
-        input.date(type="text", readonly)
+        input.date(type="text", name="date", readonly)
       .reservation__guest
         span 인원
-        input.guest(type="text", readonly)
+        input.guest(type="text", name="guest", readonly)
       .reservation__info
         .price
           span.price__left
