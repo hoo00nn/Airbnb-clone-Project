@@ -3,3 +3,4 @@ node_modules
 /server/database/users
 /server/database/sessions
 /server/database/rooms
+/server/database/reservation
