@@ -141,7 +141,7 @@ class Calendar {
     this.makeDaysElement();
     this.makeButtonElement();
     this.dayClickEvent();
-    this.isCompareInputValue();
+    this.isCompareCheckinValue();
   }
 }
 
