@@ -17,10 +17,11 @@
           span 체크아웃
           input(type="text", id="checkout", readonly, required, name="checkout", placeholder="날짜 추가")
       .personnel
+        include ../component/searchbar_guest_modal.pug
         .personnel__wrap
           label(for="personnel").personnel__wrap__left
             span 인원
-            input(type="text", id="personnel", required, name="personnel", placeholder="게스트 추가")
+            input(type="text", id="personnel", readonly, required, name="personnel", placeholder="게스트 추가")
           .search__icon
             button(type="submit")
               img(src="/images/search_white.png")
