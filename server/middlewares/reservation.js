@@ -5,6 +5,8 @@ const reservation = async (req, res) => {
     const email = await findEmail(req.cookies.SID);
     req.body.email = email;
     insertReservation(req.body);
+    
+    const data = await findReservation(email);
 
     res.render('reservation', data);
   }
@@ -16,6 +18,15 @@ const findEmail = (SID) => {
     sessionDB.findOne({SID : SID}, (err, data) => {
       if (err) console.log('Not Found Email!!');
       resolve(data.email);
+    })
+  })
+}
+
+const findReservation = (email) => {
+  return new Promise(resolve => {
+    reservationDB.find({email : email}, (err, data) => {
+      if (err) console.log('Not Found Reservation!!');
+      resolve(data);
     })
   })
 }
