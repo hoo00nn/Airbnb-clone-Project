@@ -12,7 +12,10 @@ class Reservation {
 
     price.innerText = `₩${this.price}`;
   }
+
+  makeDateElement() {
+    const date = this.reservation.querySelector('.reservation__date').querySelector('.date');
+    
+    date.setAttribute('value', `${this.checkin} -- ${this.checkout}`);
+  }
 }
-
-
-  
