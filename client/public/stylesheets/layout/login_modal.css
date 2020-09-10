@@ -5,7 +5,7 @@
 
 .login__modal__title {
   text-align: center;
-  font-size: 16px;
+  font-size: var(--font-regular);
   font-weight: bold;
   padding: 12px;
   border-bottom: 1px solid #eeeeee;
@@ -22,7 +22,7 @@
 .login__modal .login__facebook > a > div:nth-of-type(2) {
   font-weight: 800;
   color: white;
-  font-size: 16px;
+  font-size: var(--font-regular);
 }
 
 .login__modal .login__facebook > a {
@@ -64,7 +64,7 @@
 .login__modal .login__google > a > div:nth-of-type(2) {
   font-weight: 800;
   color: #484848;
-  font-size: 16px;
+  font-size: var(--font-regular);
 }
 
 .login__modal > div:nth-of-type(4) {
@@ -86,7 +86,7 @@
 }
 
 .login__modal > div:nth-of-type(4) > span > span {
-  font-size: 14px;
+  font-size: var(--font-small);
   color: rgb(118, 118, 118);
 }
 
@@ -125,13 +125,13 @@
 .login__content__info .forget__password > span {
   color: black;
   margin: 0 7px;
-  font-size: 16px;
+  font-size: var(--font-regular);
 }
 
 .login__modal__content .login__content__info button {
   width: 100%;
   color: #ffffff;
-  font-size: 16px;
+  font-size: var(--font-regular);
   padding: 10px 22px;
   text-align: center;
   text-decoration: none;
@@ -144,7 +144,7 @@
 
 .login__modal .login__modal__footer {
   text-align: left;
-  font-size: 16px;
+  font-size: var(--font-regular);
   color: #484848;
   padding: 16px 16px 0 0;
   border-top: 1px solid #eeeeee;

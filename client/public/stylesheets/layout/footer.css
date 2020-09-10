@@ -23,7 +23,7 @@
 
 .footer__top > section > ul > li {
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: var(--font-small);
   color: #222222;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .footer__bottom__left > span {
-  font-size: 14px;
+  font-size: var(--font-small);
 }
 
 .footer__bottom__left .item {
@@ -47,7 +47,7 @@
 
 .footer__bottom__right {
   display: flex;
-  font-size: 14px;
+  font-size: var(--font-small);
 }
 
 .bottom__right__option .option__language {

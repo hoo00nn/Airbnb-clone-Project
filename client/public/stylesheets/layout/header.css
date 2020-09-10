@@ -22,7 +22,7 @@
 }
 
 .header__middle > a {
-  font-size: 16px;
+  font-size: var(--font-regular);
   padding: 10px 16px;
   padding-bottom: 10px;
 }
@@ -38,7 +38,7 @@
 .header .header__right {
   display: flex;
   flex: 2 1 0;
-  font-size: 14px;
+  font-size: var(--font-small);
   justify-content: flex-end;
 }
 
