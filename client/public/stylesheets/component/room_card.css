@@ -72,11 +72,13 @@
   font-size: 14px;
 }
 
-.room__card .card__content .content__footer .room__reservation button.reservation {
+.room__card .card__content .content__footer .room__reservation span.reservation {
   padding: 10px;
   outline: none;
   background-color: rgb(255, 90, 95);
   border: none;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+  color: white;
+  font-size: var(--font-small);
 }
