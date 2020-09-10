@@ -13,5 +13,6 @@ reservationDB.loadDatabase();
 module.exports = {
   userDB,
   sessionDB,
-  roomsDB
+  roomsDB,
+  reservationDB
 };
