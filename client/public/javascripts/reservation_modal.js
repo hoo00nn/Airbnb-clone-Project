@@ -18,4 +18,10 @@ class Reservation {
     
     date.setAttribute('value', `${this.checkin} -- ${this.checkout}`);
   }
+
+  makeGuestElement() {
+    const guest = this.reservation.querySelector('.reservation__guest').querySelector('.guest');
+  
+    guest.setAttribute('value', `${this.personnel}명`);
+  }
 }
