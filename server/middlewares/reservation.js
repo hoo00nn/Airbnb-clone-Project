@@ -8,9 +8,9 @@ const reservation = async (req, res) => {
     
     const data = await findReservation(email);
 
-    res.render('reservation', data);
+    res.render('reservation', {data : data});
   }
-  res.send('<script type="text/javascript">alert("로그인이 필요합니다. 로그인 하신 후 다시 시도해 주세요.");</script>"');
+  else res.send('<script type="text/javascript">alert("로그인이 필요합니다. 로그인 하신 후 다시 시도해 주세요.");</script>"');
 }
 
 const findEmail = (SID) => {
@@ -37,10 +37,11 @@ const insertReservation = (data) => {
     checkout : JSON.parse(data.data).checkout,
     image : JSON.parse(data.data).image,
     title : JSON.parse(data.data).title,
-    email : data.email
+    email : data.email,
+    location : JSON.parse(data.data).location
   };
 
-  reservationDB.insert(ro);
+  reservationDB.insert(roomInfo);
 }
 
 module.exports = {
