@@ -1,9 +1,3 @@
-# Week 1,2
-스프린트 1주차 웹 프로젝트 - airbnb
-
-## 배포 주소
-https://airbnb-j118.herokuapp.com/
-
 ## client directory structure
 
 ```
@@ -68,6 +62,7 @@ https://airbnb-j118.herokuapp.com/
 ```
 
 ## Commit Convention
+
 - feat : 새로운 기능 추가
 - fix : 버그 수정
 - docs : 문서 수정
